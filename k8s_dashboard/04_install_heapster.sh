@@ -17,7 +17,7 @@ sed -i "s/\# type: NodePort/type: NodePort/g" grafana.yaml
 sed -i "s/value: \//\#value: \//g" grafana.yaml
 sed -i "s/\# \#value: \/api/value: \/api/g" grafana.yaml
 # Change heapster-grafana-amd64 version from v5.0.4 to v4.4.3, beacuse in gcr.io the latest version is v4.4.3
-#sed -i "s/v5\.0\.4/v4\.4\.3/g" grafana.yaml
+sed -i "s/v5\.0\.4/v4\.4\.3/g" grafana.yaml
 # Replace k8s.gcr.io image with registry.cn-shenzhen.aliyuncs.com/hyman0603
 sed -i "s/k8s\.gcr\.io/registry\.cn-shenzhen\.aliyuncs\.com\/hyman0603/g" grafana.yaml
 
@@ -27,7 +27,7 @@ sed -i "s/k8s\.gcr\.io/registry\.cn-shenzhen\.aliyuncs\.com\/hyman0603/g" heapst
 
 cp -p influxdb.yaml influxdb.yaml.bak$(date '+%Y%m%d%H%M%S')
 # Change heapster-influxdb-amd64 version from v1.5.2 to v1.3.3, beacuse in gcr.io the latest version is v1.3.3
-#sed -i "s/v1\.5\.2/v1\.3\.3/g" influxdb.yaml
+sed -i "s/v1\.5\.2/v1\.3\.3/g" influxdb.yaml
 # Replace k8s.gcr.io image with registry.cn-shenzhen.aliyuncs.com/hyman0603
 sed -i "s/k8s\.gcr\.io/registry\.cn-shenzhen\.aliyuncs\.com\/hyman0603/g" influxdb.yaml
 
