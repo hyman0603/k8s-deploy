@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-
+swapoff -a
 # Reset firstly if ran kubeadm init before
 kubeadm reset -f
 

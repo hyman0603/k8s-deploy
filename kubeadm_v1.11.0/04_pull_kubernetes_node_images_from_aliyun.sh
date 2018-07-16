@@ -17,12 +17,15 @@ images=(kube-proxy-amd64:${KUBE_VERSION}
 pause:${KUBE_PAUSE_VERSION}
 pause-amd64:${KUBE_PAUSE_VERSION})
 
-
 for imageName in ${images[@]} ; do
   docker pull $ALIYUN_URL/$imageName
   docker tag  $ALIYUN_URL/$imageName $GCR_URL/$imageName
   docker rmi $ALIYUN_URL/$imageName
 done
+
+docker pull registry.cn-shenzhen.aliyuncs.com/hyman0603/flannel:v0.10.0-amd64
+docker tag registry.cn-shenzhen.aliyuncs.com/hyman0603/flannel:v0.10.0-amd64 quay.io/coreos/flannel:v0.10.0-amd64
+docker rmi registry.cn-shenzhen.aliyuncs.com/hyman0603/flannel:v0.10.0-amd64
 
 docker images
 
